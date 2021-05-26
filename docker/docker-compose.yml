@@ -1,0 +1,20 @@
+version: '3.3'
+
+services:
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: test
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
+    volumes:
+      - db-data:/var/lib/mysql
+#    networks:
+#      default:
+#        aliases:
+#          - test-md-db
+    ports:
+      - 3306:3306
+volumes:
+  db-data:
+    driver: local
